@@ -1,0 +1,18 @@
+# (1,2,3), (3,4,7), (4,5,8)
+
+Sum_Data:
+
+  test_001:
+    a: 1
+    b: 2
+    expect: 3
+
+  test_002:
+    a: 3
+    b: 4
+    expect: 7
+
+  test_003:
+    a: 4
+    b: 5
+    expect: 8

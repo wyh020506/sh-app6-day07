@@ -1,0 +1,65 @@
+# 冒号必须跟空格
+# 对象操作
+#name: "丽丽"
+#sex: 男 # 会自动转换类型
+#dic: {"addr":"航头路"}
+
+# 数组
+#info:
+#  - name
+#  - sex
+#info1: ["123","456"]
+
+# 布尔值
+#value1: true # yaml格式
+#value2: false # yaml格式
+#value3: True
+#value4: False
+#
+# 正数 浮点数
+#value5: 12333
+#value6: 12.000001
+
+# 空
+#nu_value: ~ # 转为None
+#nu_value3:    # 转为None
+#nu_value5: Null  # 转为None
+#nu_value6: null  # 转为None
+#
+#nu_value1: None # 不支持转换 默认为字符串处理
+#nu_value2: none # 不支持转换 默认为字符串处理
+#nu_value4: "" # 不支持转换 默认为字符串处理
+
+# 时间
+#date_value: 2019-11-11 12:00:00 # 返回datetime.datetime  注意时 分 秒 双位数
+#date_value1: 2019-11-11 # 返回datetime.date 注意 年 月 日  双位数
+#date_value2: 12:12:12 # 返回一串数字
+
+#date_value3: 2019-1-1 12:12:1 # 返回字符串
+#date_value4: 2019-01-1 # 返回字符串
+
+
+# 锚点只能引用有子值的位置
+info: &infox # 锚点名字
+  name: "lili"
+  sex: "男"
+
+addr: &addrx
+  <<: *infox
+  phone: "17778889999"
+
+#{"addr":{"name":"lili","sex":"男", "phone":"17778889999"}}
+
+add_con:
+  <<: *addrx
+  bir: "1999-01-01"
+
+
+# 错误例子
+#data: &datax
+#  name: "lili"
+#  sex: "男"
+#info:
+#  phone: 1223333333
+#  <<: *datax
+
